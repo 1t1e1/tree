@@ -1,9 +1,4 @@
-import AppBar from './AppBar'
-import Drawer from './Drawer'
-import Loading from './Loading'
+import AppBar from "./Appbar";
+import AppBar2 from "./Appbar2";
 
-export {
-  AppBar,
-  Drawer,
-  Loading
-}
+export { AppBar, AppBar2 };

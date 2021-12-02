@@ -1,72 +1,86 @@
-import React, { lazy, Suspense } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { CssBaseline } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
+import React, { Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import { Drawer, AppBar, Loading } from 'components'
-import { useToggle } from 'utils'
+import { makeStyles } from "@mui/styles";
+import Button from "@mui/material/Button";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    height: '100vh',
-    position: 'relative',
-    display: 'flex',
-  },
-  content: {
-    flexGrow: 1,
-    overflowY: 'auto',
-    backgroundColor: (theme.palette.type === 'dark') ? '#191919' : '#fafafa',
-    padding: theme.spacing(3),
-  },
-  toolbar: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    height: 48,
-  },
-}))
+import PageTemp from "./PageTemp";
+import { AppBar, AppBar2 } from "../components";
+import { useToggle } from "../utils";
+import { Box } from "@mui/system";
+
+const useStyles = makeStyles((theme) => ({
+	root: {
+		height: "100vh",
+		position: "relative",
+		display: "flex",
+	},
+	content: {
+		flexGrow: 1,
+		overflowY: "auto",
+		backgroundColor: theme.palette.type === "dark" ? "#191919" : "#fafafa",
+		padding: theme.spacing(3),
+	},
+	toolbar: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "flex-end",
+		height: 48,
+	},
+}));
 
 const routes = [
-  {
-    path: '/',
-    component: lazy(() => import('./home'))
-  },
-  {
-    path: '/statistics',
-    component: lazy(() => import('./statistics'))
-  },
-  {
-    path: '/comment',
-    component: lazy(() => import('./comment'))
-  },
-  {
-    path: '(.*)',
-    component: lazy(() => import('./error'))
-  },
-]
+	{
+		path: "/",
+		component: <PageTemp name="/home" />,
+		// component: lazy(() => import("./home")),
+	},
+	{
+		path: "statistics",
+		component: <PageTemp name="statistics" />,
+	},
+	{
+		path: "comment",
+		component: <PageTemp name="comment" />,
+		// component: lazy(() => import("./comment")),
+	},
+	{
+		path: "*",
+		component: <PageTemp name="/joker_page" />,
+		// component: lazy(() => import("./error")),
+	},
+];
 
-function App () {
-  const classes = useStyles()
-  const _useToggle = useToggle()
+export default function Hook() {
+	const classes = useStyles();
+	const _useToggle = useToggle();
 
-  return (
-    <Router>
-      <div className={classes.root}>
-        <CssBaseline/>
-        <AppBar {..._useToggle}/>
-        <Drawer{..._useToggle}/>
-
-        <main className={classes.content}>
-          <div className={classes.toolbar}/>
-          <Suspense fallback={<Loading/>}>
-            <Switch>
-              {routes.map((route, key) => <Route key={key} exact {...route}/>)}
-            </Switch>
-          </Suspense>
-        </main>
-      </div>
-    </Router>
-  )
+	return (
+		<Router>
+			<AppBar {..._useToggle} />
+			<AppBar2 {..._useToggle} />
+			<h2> drawer </h2>
+			<hr />
+			<div>
+				NavLink:{" "}
+				{routes.map((route, index) => {
+					return (
+						<Box key={index}>
+							<span> | </span>
+							<Link key={index} to={route.path}>
+								Path:"{route.path}"
+							</Link>
+						</Box>
+					);
+				})}
+			</div>
+			<ol>
+				<Routes>
+					{routes.map((route, index) => {
+						return <Route path={route.path} element={route.component} />;
+					})}
+				</Routes>
+			</ol>
+		</Router>
+	);
 }
-
-export default App

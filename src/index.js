@@ -1,23 +1,20 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { createMuiTheme } from '@material-ui/core/styles'
-import { ThemeProvider } from '@material-ui/styles'
+import React from "react";
+import ReactDOM from "react-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import './index.css'
-import App from './page/App'
-import * as serviceWorker from './serviceWorker'
+import App from "./page/App";
 
-const theme = createMuiTheme({
-  palette: {
-    type: 'dark',
-  },
-})
+const theme = createTheme({
+	palette: {
+		type: "dark",
+	},
+});
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <App/>
-  </ThemeProvider>,
-  document.querySelector('#root')
-)
-
-serviceWorker.register()
+	<React.StrictMode>
+		<ThemeProvider theme={theme}>
+			<App />
+		</ThemeProvider>
+	</React.StrictMode>,
+	document.getElementById("root")
+);

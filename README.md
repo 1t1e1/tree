@@ -1,102 +1,70 @@
-Top 100 Documentaries App with [Create React App](https://github.com/facebook/create-react-app) and [Material-UI](https://material-ui.com/).
+# Getting Started with Create React App
 
-## Overview
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<p align='center'>
-<img src='https://github.com/ValleyZw/tree/blob/master/static/Tree.jpeg' width='600' alt='App Overview'>
-</p>
+## Available Scripts
 
-## Project structure
+In the project directory, you can run:
 
-```bash
-tree
-  ├── .gitignore               git ignore configuration
-  ├── jsconfig.json            baseUrl configuration
-  ├── README.md                Documentation
-  ├── package.json             npm configuration
-  ├── public/                  public resources folder
-  └── src                      Main scripts folder
-       ├── components/         React basic components folder
-       ├── data/               Public data folder
-       ├── page/               React routes folder
-       ├── utils/              Helper functions folder
-       ├── index.css           Global style
-       ├── index.js            Main js file
-       └── serviceWorker.js    Service worker configuration
-```
+### `yarn start`
 
-## State Management
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-React Hooks, an awesome feature which is available in React v16.7.0-alpha,
-is able to simplify React state and lifecycle features from function components.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-<p align='center'>
-<img src='https://github.com/ValleyZw/tree/blob/master/static/Hooks.png' width='600' alt='React Hooks'>
-</p>
+### `yarn test`
 
-### Install
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```npm
-yarn add react@next react-dom@next
-```
+### `yarn build`
 
-### Usage
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```javascript
-import { useState, useEffect, useContext, useReducer } from 'react'
-```
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Lazy loading
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-The React.lazy function enables dynamic import components and routes.
+### `yarn eject`
 
-### Component
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-```javascript
-const Child = React.lazy(() => import('./components'));
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-const Main = () => (
-  <Suspense fallback={<div>Loading...</div>}>
-    <Child />
-  </Suspense>
-)
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-### Routes
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-```javascript
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import React, { Suspense, lazy } from 'react';
+## Learn More
 
-const Home = lazy(() => import('./page/Home'));
-const About = lazy(() => import('./page/About'));
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-const App = () => (
-  <Router>
-    <Suspense fallback={<div>Loading...</div>}>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-      </Switch>
-    </Suspense>
-  </Router>
-);
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Performance
+### Code Splitting
 
-<p align='center'>
-<img src='https://github.com/ValleyZw/tree/blob/master/static/Audits.png' width='600' alt='Lighthouse Report'>
-</p>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## Reference
+### Analyzing the Bundle Size
 
-- [Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
-- [Code-Splitting](https://reactjs.org/docs/code-splitting.html)
-- [Making Sense of React Hooks](https://medium.com/@dan_abramov/making-sense-of-react-hooks-fdbde8803889)
-- [Manage global state with React Hooks](https://medium.com/@Charles_Stover/manage-global-state-with-react-hooks-6065041b55b4)
-- [Why React Hooks, and how did we even get here?](https://medium.freecodecamp.org/why-react-hooks-and-how-did-we-even-get-here-aa5ed5dc96af)
-- [Rehooks](https://rehooks.com/)
-- [Replacing Redux with the new React context API](https://medium.freecodecamp.org/replacing-redux-with-the-new-react-context-api-8f5d01a00e8c)
-- [How to use React.lazy and Suspense for components lazy loading](https://medium.freecodecamp.org/how-to-use-react-lazy-and-suspense-for-components-lazy-loading-8d420ecac58)
-- [Lazy Loading Routes in React](https://scotch.io/tutorials/lazy-loading-routes-in-react)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

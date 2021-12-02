@@ -1,0 +1,37 @@
+{
+  "name": "tree",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.0.2",
+    "@material-ui/icons": "^4.0.1",
+    "@material-ui/styles": "^4.0.2",
+    "classnames": "^2.2.6",
+    "d3-scale": "^3.0.0",
+    "disqus-react": "^1.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-lazyload": "^2.6.1",
+    "react-medium-image-zoom": "^3.0.16",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-simple-maps": "^0.12.1",
+    "recharts": "^1.6.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
