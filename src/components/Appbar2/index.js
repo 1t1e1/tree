@@ -64,11 +64,7 @@ function AppBarChild({ toggle, setToggle }) {
 			position="absolute"
 			className={classNames(classes.appBar, toggle && classes.appBarShift)}
 		>
-			<Toolbar
-				disableGutters
-				// disableGutters={!toggle}
-				variant="dense"
-			>
+			<Toolbar disableGutters variant="dense">
 				<IconButton
 					aria-label="Open drawer"
 					onClick={setToggle}
