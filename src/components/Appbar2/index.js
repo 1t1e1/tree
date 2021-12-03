@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { IconButton, Toolbar, AppBar } from "@mui/material";
+import { IconButton, Toolbar, AppBar, Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Menu } from "@mui/icons-material";
 import { InsertLink } from "@mui/icons-material";
@@ -62,7 +62,6 @@ function AppBarChild({ toggle, setToggle }) {
 		<AppBar
 			position="absolute"
 			className={classNames(classes.appBar, toggle && classes.appBarShift)}
-			sx={{ mt: 10 }}
 		>
 			<Toolbar disableGutters={!toggle} variant="dense">
 				<IconButton
@@ -74,12 +73,13 @@ function AppBarChild({ toggle, setToggle }) {
 				</IconButton>
 
 				<div className={classes.grow} />
+				<Box sx={{ flexGrow: 1 }} />
 				<IconButton aria-label="Blog">
 					<a
 						target="_blank"
 						aria-label="Blog"
 						rel="noopener noreferrer"
-						href={"https://valleyease.me"}
+						// href={"https://valleyease.me"}
 						className={classes.cardLink}
 					>
 						<InsertLink fontSize="small" />
@@ -90,7 +90,7 @@ function AppBarChild({ toggle, setToggle }) {
 						target="_blank"
 						aria-label="Github"
 						rel="noopener noreferrer"
-						href={"https://github.com/ValleyZw"}
+						// href={"https://github.com/ValleyZw"}
 						className={classes.cardLink}
 					>
 						<Github fontSize="small" />
