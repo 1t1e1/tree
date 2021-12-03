@@ -5,7 +5,7 @@ import { makeStyles } from "@mui/styles";
 import Button from "@mui/material/Button";
 
 import PageTemp from "./PageTemp";
-import { AppBar, AppBar2 } from "../components";
+import { AppBar2 } from "../components";
 import Drawer from "../components/Drawer";
 import { useToggle } from "../utils";
 import { Box } from "@mui/system";
@@ -58,7 +58,7 @@ export default function Hook() {
 
 	return (
 		<Router>
-			<AppBar {..._useToggle} />
+			<AppBar2 {..._useToggle} />
 			<Drawer {..._useToggle} />
 			<h2> home page content is under appbar</h2>
 			<hr />

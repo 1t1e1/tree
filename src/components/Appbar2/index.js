@@ -11,7 +11,8 @@ import Github from "./GithubIcon";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => {
-	console.log("theme is", theme);
+	console.log("theme is appbar2", theme);
+
 	return {
 		appBar: {
 			backgroundColor: theme.palette.type === "dark" ? "#1e1e1e" : "#ffffff",
@@ -63,7 +64,11 @@ function AppBarChild({ toggle, setToggle }) {
 			position="absolute"
 			className={classNames(classes.appBar, toggle && classes.appBarShift)}
 		>
-			<Toolbar disableGutters={!toggle} variant="dense">
+			<Toolbar
+				disableGutters
+				// disableGutters={!toggle}
+				variant="dense"
+			>
 				<IconButton
 					aria-label="Open drawer"
 					onClick={setToggle}
@@ -72,7 +77,6 @@ function AppBarChild({ toggle, setToggle }) {
 					<Menu />
 				</IconButton>
 
-				<div className={classes.grow} />
 				<Box sx={{ flexGrow: 1 }} />
 				<IconButton aria-label="Blog">
 					<a

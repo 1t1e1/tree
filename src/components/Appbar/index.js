@@ -11,7 +11,7 @@ import Github from "./GithubIcon";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => {
-	console.log("theme is", theme);
+	console.log("theme is 1", theme);
 	return {
 		appBar: {
 			backgroundColor: theme.palette.type === "dark" ? "#1e1e1e" : "#ffffff",
